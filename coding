@@ -1,0 +1,27 @@
+mkdir number-guessing && cd number-guessing
+nano game.py
+
+import random
+
+LOW, HIGH = 1, 100
+secret = random.randint(LOW, HIGH)
+tries = 0
+
+print(f"I'm thinking of a number between {LOW} and {HIGH}. Can you guess it?")
+
+while True:
+    guess_str = input("Your guess: ").strip()
+    if not guess_str.isdigit():
+        print("Please type a whole number.")
+        continue
+
+    guess = int(guess_str)
+    tries += 1
+
+    if guess < secret:
+        print("Too low!")
+    elif guess > secret:
+        print("Too high!")
+    else:
+        print(f"🎉 Correct! The number was {secret}. You needed {tries} tries.")
+        break
