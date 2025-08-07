@@ -25,3 +25,5 @@ while True:
     else:
         print(f"🎉 Correct! The number was {secret}. You needed {tries} tries.")
         break
+
+game.py
